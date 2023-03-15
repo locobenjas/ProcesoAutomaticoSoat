@@ -1,0 +1,2 @@
+D:\TFS_Positiva\CORP\AFFINITY\DEV\Fuentes\GrandesCuentas\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe.config
+C:\Users\Benjamin\Downloads\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe.config
