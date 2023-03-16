@@ -13,8 +13,6 @@ namespace GrandesCuentas.LPG.INX
         {
 
             ProcessBIlls p1 = new ProcessBIlls();
-            //var date = DateTime.Now.ToString("dd/MM/yyyy");
-            //var list = p1.SelectBills(date);
             string rules = p1.GetFiltersLevel2(2);
             //var bills = p1.ValidateBills(rules);
             List<Factura> mockFacturas = new List<Factura>()
@@ -43,6 +41,9 @@ namespace GrandesCuentas.LPG.INX
             }).ToList();
             var xmlPagadas = DataToXML<Factura>(facturaFormat, new Factura());
             var rpta = p1.LiquidarFacturas(xmlPagadas);
+            //proceso yhon
+
+
             
         }
         private string DataToXML<T>(List<T> datos, T obj)
