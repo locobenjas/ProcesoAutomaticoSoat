@@ -1,0 +1,12 @@
+D:\TFS_Positiva\CORP\AFFINITY\DEV\Fuentes\GrandesCuentas\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe.config
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe.config
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe.manifest
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.application
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.exe
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\GrandesCuentas.pdb
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\obj\x86\Debug\GrandesCuentas.exe.manifest
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\obj\x86\Debug\GrandesCuentas.application
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\obj\x86\Debug\GrandesCuentas.exe
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\obj\x86\Debug\GrandesCuentas.pdb
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\GrandesCuentas\obj\x86\Debug\GrandesCuentas.csprojResolveAssemblyReference.cache

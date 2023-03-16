@@ -1,0 +1,12 @@
+D:\LaPositiva\Desarrollo\TEDEF\GrandesCuentas\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.exe.config
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.exe.config
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.exe.manifest
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.application
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.exe
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\ProcesoAutomaticoSoat.pdb
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\obj\x86\Debug\ProcesoAutomaticoSoat.csprojResolveAssemblyReference.cache
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\obj\x86\Debug\ProcesoAutomaticoSoat.exe.manifest
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\obj\x86\Debug\ProcesoAutomaticoSoat.application
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\obj\x86\Debug\ProcesoAutomaticoSoat.exe
+D:\LaPositiva\Desarrollo\TEDEF\Consolas\ProcesoAutomaticoSoat\ProcesoAutomaticoSoat\obj\x86\Debug\ProcesoAutomaticoSoat.pdb
