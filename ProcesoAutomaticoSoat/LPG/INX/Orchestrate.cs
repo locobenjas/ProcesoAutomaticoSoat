@@ -4,6 +4,8 @@ using System;
 using System.Text;
 using System.Reflection;
 using System.Linq;
+using ProcesoAutomaticoSoat.LPG.INX.Entity;
+using System.Data;
 
 namespace GrandesCuentas.LPG.INX
 {
@@ -42,10 +44,21 @@ namespace GrandesCuentas.LPG.INX
             var xmlPagadas = DataToXML<Factura>(facturaFormat, new Factura());
             var rpta = p1.LiquidarFacturas(xmlPagadas);
             //proceso yhon
+            ProcessDerivacionBandeja oProcessDerivacionBandeja = new ProcessDerivacionBandeja();
 
-
-            
+            foreach (Factura fac in mockFacturas)
+            {
+                if (fac.movimiento == 0) {//OBS
+                    //DERIVAR A SU BANDEJA DEL USUARIO QUE PERTENECE A LA OFICINA
+                    fac.oficinaFisica = "LIMA";
+                    string[] usuariobandeja = oProcessDerivacionBandeja.ObtenerUsuarioBandeja(fac.oficinaFisica);
+                    int rptaDeriv = ProcesoEnviar(fac.ruc, fac.serie, fac.numero, usuariobandeja[0], Convert.ToInt32(usuariobandeja[1])); 
+                }else{
+                    int rptaDeriv = ProcesoEnviar(fac.ruc, fac.serie, fac.numero); 
+                }
+            }
         }
+
         private string DataToXML<T>(List<T> datos, T obj)
         {
             StringBuilder rpta = new StringBuilder();
@@ -75,6 +88,90 @@ namespace GrandesCuentas.LPG.INX
             }
 
             return "<datos>" + rpta.ToString() + "</datos>";
+        }
+
+        private int ProcesoEnviar(string ruc, string serie, string numerodoc, string usuario = "", int bandeja = 0)
+        {
+            ProcessDerivacionBandeja oCDerivacionBandejaPA = new ProcessDerivacionBandeja();
+            DataTable dtDocumentos = oCDerivacionBandejaPA.GetDocumentoCoa(ruc, serie, numerodoc);
+            ESolicitudHistorialPA EitemSolicitudHistorialOrigen;
+            ESolicitudHistorialPA EitemSolicitudHistorialDestino;
+            int cantRegistrados = 0;
+
+            foreach (DataRow dr in dtDocumentos.Rows)
+            {
+                EitemSolicitudHistorialOrigen = new ESolicitudHistorialPA();
+                EitemSolicitudHistorialOrigen.idSolicitud = Convert.ToInt32(dr["IdSolicitud"].ToString());
+                EitemSolicitudHistorialOrigen.idTipoFlujo = 1;
+                EitemSolicitudHistorialOrigen.idUnidadOrganizativa = 1;
+                EitemSolicitudHistorialOrigen.idAccion = 3; //ACCION ENVIAR
+                EitemSolicitudHistorialOrigen.idBandejaOrigen = 6;//Bandeja del usuario en login TEDEF
+                EitemSolicitudHistorialOrigen.idBandejaDestino = bandeja == 0 ? 6 : bandeja;//Bandeja del usuario: U0000001, 6: A. PAGOS
+                EitemSolicitudHistorialOrigen.idRolOrigen = 6;
+                EitemSolicitudHistorialOrigen.idRolDestino = bandeja == 0 ? 6 : bandeja;
+                EitemSolicitudHistorialOrigen.usuarioOrigen = "U0000001"; //Usuario Asistente Pagos
+                EitemSolicitudHistorialOrigen.usuarioDestino = usuario == "" ? "U0000002" : usuario;
+                EitemSolicitudHistorialOrigen.usuarioCreacion = "PA";
+
+                EitemSolicitudHistorialOrigen.comentario = "PAGO AUTOMATICO CONSOLA";
+                EitemSolicitudHistorialOrigen.idTipoComentario = 1;
+                EitemSolicitudHistorialOrigen.idEstadoFlujo = 1;
+                EitemSolicitudHistorialOrigen.idEstadoDocumento = 1;
+
+                EitemSolicitudHistorialOrigen.idSolicitudHistorial = RegistrarHistorico(null, EitemSolicitudHistorialOrigen);
+
+                EitemSolicitudHistorialDestino = new ESolicitudHistorialPA();
+                EitemSolicitudHistorialDestino.idSolicitud = Convert.ToInt32(dr["IdSolicitud"].ToString());
+                EitemSolicitudHistorialDestino.idTipoFlujo = 1;
+                EitemSolicitudHistorialDestino.idUnidadOrganizativa = 1;
+                EitemSolicitudHistorialDestino.idAccion = 3;
+                EitemSolicitudHistorialDestino.idBandejaOrigen = 6;
+                EitemSolicitudHistorialDestino.idBandejaDestino = null;
+                EitemSolicitudHistorialDestino.idRolOrigen = 6;
+                EitemSolicitudHistorialDestino.idRolDestino = null;
+                EitemSolicitudHistorialDestino.usuarioOrigen = "U0000001";
+                EitemSolicitudHistorialDestino.usuarioDestino = null;
+                EitemSolicitudHistorialDestino.usuarioCreacion = "U0000000";
+                EitemSolicitudHistorialDestino.comentario = null;
+
+                EitemSolicitudHistorialDestino.idEstadoFlujo = 1;
+                EitemSolicitudHistorialDestino.idEstadoDocumento = 1;
+
+                cantRegistrados += RegistrarHistorico(EitemSolicitudHistorialOrigen, EitemSolicitudHistorialDestino);
+            }
+            return cantRegistrados;
+        }
+
+        private int RegistrarHistorico(ESolicitudHistorialPA origen, ESolicitudHistorialPA destino)
+        {
+            ESolicitudHistorialPA oItemAnt = null;
+            int iResultado = 0;
+            ProcessDerivacionBandeja oProcessDerivacionBandeja = new ProcessDerivacionBandeja();
+
+            try
+            {
+                if (origen == null)
+                {
+                    oItemAnt = oProcessDerivacionBandeja.ObtenerHistoricoBandeja(destino);
+                }
+                if (origen != null)
+                {
+                    string sOrigen = origen.idRolOrigen != 2 ? origen.usuarioOrigen : string.Empty;
+                    if (origen.usuarioDestino != null && origen.usuarioDestino != sOrigen)
+                        destino.idSolicitudHistorialAnt = origen.idSolicitudHistorial;
+                }
+                else
+                    destino.idSolicitudHistorialAnt = oItemAnt.idSolicitudHistorialAnt;
+
+
+                oProcessDerivacionBandeja.EliminarHistoricoBandeja(destino);
+                iResultado = oProcessDerivacionBandeja.RegistrarHistoricoBandeja(destino);
+                return iResultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Orchestrate.RegistrarHistorico()" + " - " + ex.Message + " - " + ex.InnerException, ex);
+            }
         }
     }
 }

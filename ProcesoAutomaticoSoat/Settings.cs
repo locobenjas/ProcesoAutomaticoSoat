@@ -10,6 +10,8 @@ namespace GrandesCuentas
         LPV_INX,
         LPE_INX,
         AFF_SQL,
+        LPG_GF,
+        LPG_TD
     }
 
     public static class Settings

@@ -26,5 +26,6 @@
         public string campo {get;set;}
         public string motivo { get; set; }
         public int movimiento { get; set; }
+        public string oficinaFisica { get; set; }
     }
 }

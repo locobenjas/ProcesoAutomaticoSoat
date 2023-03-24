@@ -87,12 +87,14 @@
     <Compile Include="LPE\INX\p1_Process.cs" />
     <Compile Include="LPE\INX\p2_Extraction.cs" />
     <Compile Include="LPG\INX\Entity\ConfiguracionInicial.cs" />
+    <Compile Include="LPG\INX\Entity\ESolicitudHistorialPA.cs" />
     <Compile Include="LPG\INX\Entity\Factura.cs" />
     <Compile Include="LPG\INX\p3_Extraction.cs" />
     <Compile Include="LPG\INX\Orchestrate.cs" />
     <Compile Include="LPG\INX\p1_Process.cs" />
     <Compile Include="LPG\INX\p2_Extraction.cs" />
     <Compile Include="LPG\INX\ProcessBIlls.cs" />
+    <Compile Include="LPG\INX\ProcessDerivacionBandeja.cs" />
     <Compile Include="LPG\VT\p3_Extraction.cs" />
     <Compile Include="LPG\VT\Orchestrate.cs" />
     <Compile Include="LPG\VT\p1_Process.cs" />
