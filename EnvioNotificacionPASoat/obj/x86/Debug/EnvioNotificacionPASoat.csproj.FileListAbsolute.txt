@@ -1,0 +1,7 @@
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\bin\Debug\EnvioNotificacionPASoat.exe.config
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\bin\Debug\EnvioNotificacionPASoat.exe
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\bin\Debug\EnvioNotificacionPASoat.pdb
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\obj\x86\Debug\EnvioNotificacionPASoat.csprojResolveAssemblyReference.cache
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\obj\x86\Debug\EnvioNotificacionPASoat.exe
+C:\LP\ProcesoAutomaticoSoat\EnvioNotificacionPASoat\obj\x86\Debug\EnvioNotificacionPASoat.pdb

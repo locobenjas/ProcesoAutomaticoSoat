@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcesoAutomaticoSoat", "ProcesoAutomaticoSoat\ProcesoAutomaticoSoat.csproj", "{DFAD5B0B-E7CB-4963-8EAD-239A307921E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvioNotificacionPASoat", "EnvioNotificacionPASoat\EnvioNotificacionPASoat.csproj", "{76222250-BF7E-4C78-B869-22CAE4127A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{DFAD5B0B-E7CB-4963-8EAD-239A307921E2}.Debug|x86.Build.0 = Debug|x86
 		{DFAD5B0B-E7CB-4963-8EAD-239A307921E2}.Release|x86.ActiveCfg = Release|x86
 		{DFAD5B0B-E7CB-4963-8EAD-239A307921E2}.Release|x86.Build.0 = Release|x86
+		{76222250-BF7E-4C78-B869-22CAE4127A94}.Debug|x86.ActiveCfg = Debug|x86
+		{76222250-BF7E-4C78-B869-22CAE4127A94}.Debug|x86.Build.0 = Debug|x86
+		{76222250-BF7E-4C78-B869-22CAE4127A94}.Release|x86.ActiveCfg = Release|x86
+		{76222250-BF7E-4C78-B869-22CAE4127A94}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
